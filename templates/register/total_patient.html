@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load mathfilters %}
+{% block content %}
+<div class="col-sm-6 col-sm-offset-4">
+<div class="lead">
+<!--<ol>Existing_Patients - {{ curr_patient|sub:dis_patient }}</ol>-->
+<ol>Existing_Patients - {{ curr_patient }}</ol>
+<ol>Total Patients Visited - {{ curr_patient|add:dis_patient }}</ol>
+<ol>Total_beds_available - {{ 50|sub:curr_patient }}</ol>
+
+</div>
+</div>
+
+{% endblock %}

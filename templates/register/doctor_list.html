@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center">
+<h1>Doctors List</h1>
+    </div>
+{% for item in object_list %}
+
+    <table class="table table-striped">
+    <tr>
+        <td><h2>{{ item.speciality }}</h2><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></td>
+
+    </tr>
+    </table>
+
+{% endfor %}
+{% endblock %}

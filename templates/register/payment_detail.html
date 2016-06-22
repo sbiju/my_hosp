@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2 class="sub-header">Bill Details</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Patient Name</th>
+                  <th>Authorized Doctor</th>
+                  <th>Admitted Time</th>
+                  <th>Discharge Time</th>
+                  <th>Medical Exp</th>
+                  <th>Rent</th>
+                  <th>Service Charges</th>
+                  <th>Subtotal</th>
+                  <th>Tax</th>
+                  <th>Total</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>{{ object.patient }}</td>
+                    <td>{{ object.auth_by }}</td>
+                    <td>{{ object.patient.time_admitted }}</td>
+                    <td>{{ object.time_discharged }}</td>
+                    <td>{{ object.medical_exp }}</td>
+                    <td>{{ object.rent }}</td>
+                    <td>{{ object.service_charges }}</td>
+                    <td>{{ object.subtotal }}</td>
+                    <td>{{ object.tax_total }}</td>
+                    <td>{{ object.total }}</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+{% endblock %}

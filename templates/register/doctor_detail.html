@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="sub-header">Doctor Details</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Sal.</th>
+                  <th>Name</th>
+                  <th>Speciality</th>
+                  <th>House No.</th>
+                  <th>Street</th>
+                  <th>City</th>
+                  <th>State</th>
+                  <th>Delete?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>{{ object.salutation }}</td>
+                    <td>{{ object.name }}</td>
+                    <td>{{ object.speciality }}</td>
+                    <td>{{ object.house_number }}</td>
+                    <td>{{ object.street }}</td>
+                    <td>{{ object.city }}</td>
+                    <td>{{ object.state }}</td>
+                    <td>
+                    <a href="{% url 'hospital:doctor_delete' doctor.pk %}" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-off" area-hidden="true"></span>
+                    </a>
+                    </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+{% endblock %}

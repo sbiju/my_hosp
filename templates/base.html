@@ -1,0 +1,114 @@
+{% load staticfiles %}
+<style>
+
+element {
+
+}
+.col-sm-3 {
+
+    width: 25%;
+
+}
+.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+
+    float: left;
+
+}
+.col-xs-6 {
+
+    width: 50%;
+
+}
+.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+
+    float: left;
+
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 80px;
+
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>City Hospital</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    {% include 'navbar.html' %}
+
+        <div class="container">
+          <div class="row row-offcanvas row-offcanvas-right">
+                    <div class="col-xs-12 col-sm-9">
+                    <p class="pull-right visible-xs"></p>
+                        {% block content %}{% endblock %}
+                     </div>
+              {% if request.user.is_authenticated %}
+                      <div class="col-xs-12 col-sm-3 sidebar-offcanvas" id="sidebar">
+                      <div class="list-group">
+                        <a href="{% url 'hospital:home' %}" class="list-group-item active">Home</a>
+                        <a href="{% url 'hospital:doctor_list' %}" class="list-group-item">Doctors</a>
+                        <a href="{% url 'hospital:patient_list' %}" class="list-group-item">Current Patients</a>
+                        <a href="{% url 'hospital:payment_create' %}" class="list-group-item">Create Invoice</a>
+                        <a href="{% url 'hospital:patient_create' %}" class="list-group-item">New Patient</a>
+                        <a href="{% url 'hospital:payment_list' %}" class="list-group-item">Existing Bills</a>
+                        <a href="{% url 'hospital:discharge_approved_list' %}" class="list-group-item">Patient Approved for Discharge</a>
+                        <a href="{% url 'hospital:discharge_list' %}" class="list-group-item">Discharge List</a>
+                        <a href="{% url 'hospital:total_patients' %}" class="list-group-item">Patient Data</a>
+                        <a href="{% url 'hospital:bill_view' %}" class="list-group-item">Bill Data</a>
+                        <a href="{% url 'patients_api' %}" class="list-group-item">DRF Patients</a>
+                        <a href="{% url 'payments_api' %}" class="list-group-item">DRF Payments</a>
+                      </div>
+                    </div><!--/.sidebar-offcanvas-->
+             </div><!--/.col-xs-12.col-sm-9-->
+    {% endif %}
+          <hr>
+
+              <footer>
+                <p>&copy; 2016 City Hospital, Inc.</p>
+              </footer>
+    </div><!--/.container-->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+ <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="http://getbootstrap.com/assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+

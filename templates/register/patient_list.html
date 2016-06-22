@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Patient List</h3>
+{% for item in object_list %}
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr>
+                <td>
+                    {{ forloop.counter }}) {{ item.name }}[ID NO: 00{{ item.id }}] ( Department - {{ item.department.department }})
+                   <a href="{{ item.get_absolute_url }}">/Update/</a>
+                     <a href="{{ item.get_approve_url }}">/Approve/</a>
+                     <a href="{{ item.get_discharge_url }}">/Discharge/</a>
+                   <!--<a href="{{ item.get_absolute_url }}">{{ forloop.counter }}) {{ item.name }}</a> - [ID NO: 00{{ item.id }}] ( Department - {{ item.department.department }})-->
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+{% endfor %}
+{% endblock %}

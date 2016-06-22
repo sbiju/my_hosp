@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center">
+<h2>Payment List</h2>
+</div>
+<div class="row">
+    <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" name="q" placeholder="Search Bills" value="{{ request.GET.q }}"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% for item in object_list %}
+    <table class="table table-striped table-responsive">
+        <tr>
+            <td>
+               <a href="{{ item.get_absolute_url }}">{{ forloop.counter }}) BILL NO: 00{{ item.id }} - {{ item.patient }}</a>
+            </td>
+        </tr>
+    </table>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?{{ page_request_var }}={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?{{ page_request_var }}={{ object_list.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">next</a>
+        {% endif %}
+    </span>
+</div>
+
+
+{% endblock %}

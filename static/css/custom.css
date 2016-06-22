@@ -1,0 +1,14 @@
+.navbar-inverse {
+    background-color: #C60F69;!important
+    border-color: #080808;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color:#155EBD;
+}
+a {
+    color: #c90f16;
+    text-decoration: none;
+}
