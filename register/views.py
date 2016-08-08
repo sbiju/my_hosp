@@ -185,9 +185,6 @@ class PaymentDetailView(StaffRequiredMixin, DetailView):
     queryset = Payment.objects.all()
 
 
-
-
-
 class DischargeView(StaffRequiredMixin, DeleteView):
     model = Patient
     template_name = 'register/discharge_confirm.html'

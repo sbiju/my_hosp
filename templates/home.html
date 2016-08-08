@@ -50,6 +50,7 @@ element {
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -61,6 +62,67 @@ element {
 
   <body>
   {% include 'navbar.html' %}
+<!--<div class="navbar-wrapper">-->
+    <!--<div class="container-fluid">-->
+        <!--<nav class="navbar navbar-fixed-top">-->
+            <!--<div class="container">-->
+                <!--<div class="navbar-header">-->
+                    <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">-->
+                    <!--<span class="sr-only">Toggle navigation</span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--<span class="icon-bar"></span>-->
+                    <!--</button>-->
+                    <!--<a class="navbar-brand" href="#">Logo</a>-->
+                <!--</div>-->
+                <!--<div id="navbar" class="navbar-collapse collapse">-->
+                    <!--<ul class="nav navbar-nav">-->
+                        <!--<li class="active"><a href="#" class="">Home</a></li>-->
+                        <!--<li class=" dropdown">-->
+                            <!--<a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Departments <span class="caret"></span></a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li class=" dropdown">-->
+                                    <!--<a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View Departments</a>-->
+                                <!--</li>-->
+                                <!--<li><a href="#">Add New</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li><a href="#">Add New</a></li>-->
+                        <!--<li class=" dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Managers <span class="caret"></span></a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#">View Managers</a></li>-->
+                                <!--<li><a href="#">Add New</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Staff <span class="caret"></span></a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#">View Staff</a></li>-->
+                                <!--<li><a href="#">Add New</a></li>-->
+                                <!--<li><a href="#">Bulk Upload</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li class=" down"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HR <span class="caret"></span></a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#">Change Time Entry</a></li>-->
+                                <!--<li><a href="#">Report</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="nav navbar-nav pull-right">-->
+                        <!--<li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signed in as  <span class="caret"></span></a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#">Change Password</a></li>-->
+                                <!--<li><a href="#">My Profile</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                        <!--<li class=""><a href="#">Logout</a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</nav>-->
+    <!--</div>-->
+<!--</div>-->
+
 
     <div class="container">
       <div class="row row-offcanvas row-offcanvas-right">
@@ -87,6 +149,12 @@ element {
               <span class="text-muted">Something else</span>
             </div>
           </div>
+
+
+
+
+
+
           <!--<div class="row">-->
              <!--<div class="col-xs-12 col-sm-7">-->
             <!--<form class="form-signin" action="{% url 'account_login' %}">-->
@@ -105,6 +173,11 @@ element {
            <!--</div>-->
           <!--</div>&lt;!&ndash;/row&ndash;&gt;-->
         </div><!--/.col-xs-12.col-sm-9-->
+
+
+
+
+
         <div class="col-xs-12 col-sm-3 sidebar-offcanvas" id="sidebar">
                   <div class="list-group">
                     <a href="{% url 'hospital:home' %}" class="list-group-item active"> Home</a>
@@ -123,10 +196,18 @@ element {
                 </div><!--/.sidebar-offcanvas-->
       </div><!--/row-->
       <hr>
-      <footer>
+
+    </div><!--/.container-->
+
+    <div class="container">
+        <footer>
         <p>&copy; 2015 Company, Inc.</p>
       </footer>
-    </div><!--/.container-->
+    </div>
+
+
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
  <!-- Placed at the end of the document so the pages load faster -->

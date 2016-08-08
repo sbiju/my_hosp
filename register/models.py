@@ -64,6 +64,7 @@ class Patient(models.Model):
     def get_discharge_url(self):
         return reverse('hospital:discharge_complete', kwargs={'pk': self.pk})
 
+
 class Payment(models.Model):
     patient = models.ForeignKey(Patient, blank=True)
     auth_by = models.ForeignKey(Doctor, related_name='payment', blank=True, null=True)
